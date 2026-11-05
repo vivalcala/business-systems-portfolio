@@ -1,0 +1,6 @@
+# One facility per line, spelled exactly as in the tracker. Fictional examples.
+Riverside General Hospital
+Bayview Medical Center
+Coastal Memorial Hospital
+Sunrise Funeral Home
+Harbor Cremation Services
