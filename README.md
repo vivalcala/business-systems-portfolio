@@ -13,10 +13,9 @@ Current stack: Microsoft 365 and Power Platform (Lists, SharePoint, Forms, Power
 
 All case studies use **fictional data**. They show system design and process thinking, not real records.
 
-| # | Case study | Focus | Stack |
-|---|---|---|---|
-| 01 | [Student Information System](case-studies/01-student-information-system.md) | Relational data model, lifecycle, accreditation metrics | Microsoft Lists, Forms |
-| 02 | [Case Management & Weekly Reporting](case-studies/02-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
+| Case study | Focus | Stack |
+|---|---|---|
+| [Case Management & Weekly Reporting](case-studies/02-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
 
 ## How I work
 
