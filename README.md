@@ -15,7 +15,7 @@ All case studies use **fictional data**. They show system design and process thi
 
 | Case study | Focus | Stack |
 |---|---|---|
-| [Case Management & Weekly Reporting](case-studies/02-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
+| [Case Management & Weekly Reporting](case-studies/01-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
 
 ## How I work
 
