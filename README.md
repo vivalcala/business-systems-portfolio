@@ -1,6 +1,8 @@
-# Vivian Alcala — Business Systems & Low-Code Solutions
+# Vivian Alcala — Business Systems Analysis & Automation
 
-I design and build business systems on Microsoft 365 and Power Platform. I turn paper-heavy, manual processes into structured data, automated workflows, and reports that one person can run.
+**Work smarter, by design.** I analyze how work actually gets done, then design and build the systems that replace manual, paper-heavy processes: structured data, automated workflows, AI agents and reports that a small team can run on its own.
+
+Current stack: Microsoft 365 and Power Platform (Lists, SharePoint, Forms, Power Automate, Copilot).
 
 **Target roles:** Business Systems Analyst · Power Platform Developer · long-term: Solutions Architect
 **Education:** B.S. Information Systems Technology (Software Engineering), Miami Dade College, 2026 · B.A. Organizational Communication, Florida International University
@@ -14,7 +16,7 @@ All case studies use **fictional data**. They show system design and process thi
 | # | Case study | Focus | Stack |
 |---|---|---|---|
 | 01 | [Student Information System](case-studies/01-student-information-system.md) | Relational data model, lifecycle, accreditation metrics | Microsoft Lists, Forms |
-| 02 | Case Management & Weekly Reporting *(coming soon)* | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
+| 02 | [Case Management & Weekly Reporting](case-studies/02-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
 | 03 | Accreditation Document Repository *(coming soon)* | Information architecture, platform constraints | SharePoint |
 | 04 | Copilot Email Agent *(coming soon)* | License-aware AI agent with human review | Copilot Agent Builder, Outlook |
 | 05 | Document Digitalization *(coming soon)* | Compliance-driven forms and templates | Word, fillable PDF, SharePoint |
