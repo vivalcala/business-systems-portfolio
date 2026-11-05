@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 190" width="900" height="190" role="img" aria-label="Most teams don't need more software. They need the work they already do, designed properly, then automated.">
+  <style>.f{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif}</style>
+  <rect width="900" height="190" rx="16" fill="#ffffff" stroke="#d7e3e1"/>
+  <g class="f">
+    <rect id="hl" x="40" y="94" width="470" height="12" fill="#c8efe6"/>
+    <text x="40" y="44" font-size="12" font-weight="700" letter-spacing="2" fill="#0f7b6c">MY THESIS</text>
+    <text x="40" y="70" font-size="22" font-weight="600" fill="#1f2328">Most teams don't need more software. They need</text>
+    <text x="40" y="104" font-size="22" font-weight="600" fill="#1f2328">the work they already do, designed properly — then automated.</text>
+    <line x1="40" y1="128" x2="860" y2="128" stroke="#e3ecea"/>
+    <text x="40" y="160" font-size="14" font-weight="700" fill="#0f3d3e">Process first</text>
+    <text x="146" y="160" font-size="14" fill="#59636e">map the real work</text>
+    <text x="330" y="160" font-size="14" font-weight="700" fill="#0f3d3e">Built to last</text>
+    <text x="428" y="160" font-size="14" fill="#59636e">one operator, $0 extra</text>
+    <text x="650" y="160" font-size="14" font-weight="700" fill="#0f3d3e">Code when needed</text>
+    <text x="788" y="160" font-size="14" fill="#59636e">Python + OCR</text>
+  </g>
+</svg>

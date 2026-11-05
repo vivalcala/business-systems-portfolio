@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="Vivian Alcala — Work smarter, by design">
+  <style>
+    .f{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif}
+    .flow path{fill:none;stroke-width:1.8;stroke-dasharray:6 9;animation:d 4s linear infinite}
+    .flow path:nth-child(2){animation-duration:5s}
+    .flow path:nth-child(3){animation-duration:6s}
+    .dot{animation:p 2.4s ease-in-out infinite}
+    .dot:nth-child(2){animation-delay:.6s}.dot:nth-child(3){animation-delay:1.2s}
+    @keyframes d{to{stroke-dashoffset:-150}}
+    @keyframes p{0%,100%{opacity:.35}50%{opacity:1}}
+  </style>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7dd3fc"/><stop offset=".55" stop-color="#a78bfa"/><stop offset="1" stop-color="#f0abfc"/></linearGradient>
+    <radialGradient id="glow" cx="80%" cy="40%" r="60%"><stop offset="0" stop-color="#312e81" stop-opacity=".55"/><stop offset="1" stop-color="#0b1220" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="900" height="300" rx="18" fill="#0b1220"/>
+  <rect width="900" height="300" rx="18" fill="url(#glow)"/>
+  <g class="flow">
+    <path d="M560 70 C660 70 700 150 860 128" stroke="#7dd3fc"/>
+    <path d="M540 160 C650 160 700 100 860 168" stroke="#a78bfa"/>
+    <path d="M560 250 C650 250 720 210 860 214" stroke="#f0abfc"/>
+  </g>
+  <g fill="#fff"><circle class="dot" cx="860" cy="128" r="4.5"/><circle class="dot" cx="860" cy="168" r="4.5"/><circle class="dot" cx="860" cy="214" r="4.5"/></g>
+  <g class="f">
+    <rect x="44" y="44" width="262" height="28" rx="14" fill="#7dd3fc" fill-opacity=".12" stroke="#7dd3fc" stroke-opacity=".35"/>
+    <text x="175" y="63" text-anchor="middle" font-size="13" font-weight="600" fill="#7dd3fc">Business Systems · Automation · AI</text>
+    <text x="44" y="132" font-size="46" font-weight="700" fill="#ffffff" letter-spacing="-1">Vivian Alcala</text>
+    <text x="44" y="184" font-size="40" font-weight="700" fill="url(#g)" letter-spacing="-1">Work smarter, by design.</text>
+    <text x="44" y="226" font-size="17" fill="#b6c2d9">I turn paper-heavy, manual processes into data, automation</text>
+    <text x="44" y="250" font-size="17" fill="#b6c2d9">and AI that small teams actually use.</text>
+  </g>
+</svg>
