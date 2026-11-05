@@ -22,7 +22,7 @@ Pain points:
 
 ## Solution
 
-An Excel tracker migrated to a **Microsoft List**, with **Power Automate** drafting the recurring communications and the coordinator approving them.
+An Excel tracker migrated to a **Microsoft List**, a **Python intake script** that splits and reads incoming forms, and **Power Automate** flows that create cases and draft the recurring communications for the coordinator to approve.
 
 ### Process
 
@@ -41,6 +41,16 @@ flowchart LR
     I --> J{Coordinator review}
     J --> K[Weekly report sent]
 ```
+
+### Intake automation: from one PDF to tracked cases
+
+Release forms arrive as one PDF with several cases, often a scanned copy. A Python script I wrote, the **[PDF Case Splitter](../tools/pdf-case-splitter/)**, reads every page (with OCR for scans), extracts the case data and saves one PDF plus one JSON record per case to a synced folder. A Power Automate flow then:
+
+1. Looks up the case by its ID in the tracker, and creates it if it does not exist.
+2. Files the PDF in the case documents library by term and month.
+3. Attaches the PDF to the tracker row, ready for the transport request.
+
+Pages the script cannot read go to a review folder, so a bad scan never creates a wrong record.
 
 ### Case Tracker data model
 
@@ -75,4 +85,4 @@ flowchart LR
 
 ## Skills shown
 
-Process mapping · Business rules analysis · Microsoft Lists · Power Automate · Human-in-the-loop automation · Stakeholder-friendly design
+Process mapping · Business rules analysis · Python (PDF parsing, OCR) · Microsoft Lists · Power Automate · Human-in-the-loop automation · Stakeholder-friendly design
