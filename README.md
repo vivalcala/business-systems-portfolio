@@ -15,7 +15,13 @@ All case studies use **fictional data**. They show system design and process thi
 
 | Case study | Focus | Stack |
 |---|---|---|
-| [Case Management & Weekly Reporting](case-studies/01-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
+| [Case Management & Weekly Reporting](case-studies/01-case-management-weekly-reporting.md) | Process redesign, PDF intake with OCR, business rules, report automation | Python, Lists, Power Automate, Outlook |
+
+## Tools
+
+| Tool | What it does | Stack |
+|---|---|---|
+| [PDF Case Splitter](tools/pdf-case-splitter/) | Splits a multi-page (even scanned) PDF of forms into one PDF + one JSON record per case for automated intake | Python, pypdf, OCR |
 
 ## How I work
 
@@ -27,7 +33,7 @@ All case studies use **fictional data**. They show system design and process thi
 
 ## Skills
 
-Requirements analysis · Data modeling · Process mapping · Microsoft Lists & SharePoint · Power Automate (standard connectors) · Microsoft Forms · Copilot Agent Builder · Excel · Technical documentation
+Requirements analysis · Data modeling · Process mapping · Python · Microsoft Lists & SharePoint · Power Automate (standard connectors) · Microsoft Forms · Copilot Agent Builder · Excel · Technical documentation
 
 ## Contact
 

@@ -1,0 +1,5 @@
+# Never commit real case documents or generated output
+input_pdf/
+processed_archive/
+output/
+**/_data/
