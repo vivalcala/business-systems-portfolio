@@ -17,9 +17,6 @@ All case studies use **fictional data**. They show system design and process thi
 |---|---|---|---|
 | 01 | [Student Information System](case-studies/01-student-information-system.md) | Relational data model, lifecycle, accreditation metrics | Microsoft Lists, Forms |
 | 02 | [Case Management & Weekly Reporting](case-studies/02-case-management-weekly-reporting.md) | Process redesign, business rules, report automation | Lists, Power Automate, Outlook |
-| 03 | Accreditation Document Repository *(coming soon)* | Information architecture, platform constraints | SharePoint |
-| 04 | Copilot Email Agent *(coming soon)* | License-aware AI agent with human review | Copilot Agent Builder, Outlook |
-| 05 | Document Digitalization *(coming soon)* | Compliance-driven forms and templates | Word, fillable PDF, SharePoint |
 
 ## How I work
 
