@@ -22,6 +22,7 @@ All case studies use **fictional data**. They show system design and process thi
 | Tool | What it does | Stack |
 |---|---|---|
 | [PDF Case Splitter](tools/pdf-case-splitter/) | Splits a multi-page (even scanned) PDF of forms into one PDF + one JSON record per case for automated intake | Python, pypdf, OCR |
+| [PDF Form Splitter](https://github.com/vivalcala/pdf-form-splitter) | The generalized version: any document type (forms, invoices…) through JSON profiles, no code changes | Python, OCR, JSON profiles |
 
 ## How I work
 
