@@ -1,4 +1,4 @@
-# 02 — Case Management & Weekly Reporting
+# 01 — Case Management & Weekly Reporting
 
 > Fictional data. This case study shows the process and system design I built for a college lab program. No real case records, names or partner details are included.
 
