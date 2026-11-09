@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-label="Case study: Case Management and Weekly Reporting. Problem, approach, outcome and architecture.">
-  <style>.f{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif}.m{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-label="Case study: Case Management and Weekly Reporting. Problem, approach, outcome and an animated architecture flow.">
+  <style>
+    .f{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif}
+    .m{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+    .wire{stroke-dasharray:4 5;animation:w 1.2s linear infinite}
+    @keyframes w{to{stroke-dashoffset:-18}}
+    .pkt{animation:run 6s cubic-bezier(.45,0,.55,1) infinite}
+    @keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}94%{opacity:1}100%{transform:translateX(696px);opacity:0}}
+    .glow{animation:g 6s ease-in-out infinite}
+    @keyframes g{0%,80%{fill-opacity:0}90%{fill-opacity:.35}100%{fill-opacity:0}}
+    .live{animation:l 2s ease-in-out infinite}
+    @keyframes l{0%,100%{opacity:.35}50%{opacity:1}}
+  </style>
   <defs>
     <linearGradient id="h" x1="0" x2="1"><stop offset="0" stop-color="#0f3d3e"/><stop offset="1" stop-color="#0f766e"/></linearGradient>
     <clipPath id="c"><rect width="900" height="310" rx="16"/></clipPath>
@@ -14,27 +25,31 @@
   <g class="f">
     <text x="28" y="27" font-size="11" font-weight="700" letter-spacing="2" fill="#99f6e4">CASE STUDY 01</text>
     <text x="28" y="49" font-size="19" font-weight="700" fill="#ffffff">Case Management &amp; Weekly Reporting</text>
+    <circle class="live" cx="598" cy="40" r="4" fill="#5eead4"/>
     <text x="872" y="44" text-anchor="end" class="m" font-size="12" fill="#ccfbf1">Lists · Power Automate · Python · OCR</text>
 
     <text x="28" y="96" font-size="11" font-weight="700" letter-spacing="2" fill="#0f7b6c">PROBLEM</text>
-    <text font-size="14" fill="#33393f"><tspan x="28" y="122">A strict 2-week rule tracked by</tspan><tspan x="28" y="142">memory. Multi-case scans split</tspan><tspan x="28" y="162">by hand. A weekly report typed</tspan><tspan x="28" y="182">from scratch, every week.</tspan></text>
+    <text font-size="14" fill="#33393f"><tspan x="28" y="122">A strict 2-week rule tracked by</tspan><tspan x="28" y="142">memory. Multi-case scans split</tspan><tspan x="28" y="162">by hand. Every call, email and</tspan><tspan x="28" y="182">report done case by case.</tspan></text>
 
     <line x1="306" y1="82" x2="306" y2="190" stroke="#e3ecea"/>
     <text x="328" y="96" font-size="11" font-weight="700" letter-spacing="2" fill="#0f7b6c">APPROACH</text>
-    <text font-size="14" fill="#33393f"><tspan x="328" y="122">Mapped the real process, modeled</tspan><tspan x="328" y="142">the data, wrote an OCR intake</tspan><tspan x="328" y="162">script and kept human review</tspan><tspan x="328" y="182">where it matters.</tspan></text>
+    <text font-size="14" fill="#33393f"><tspan x="328" y="122">Mapped the real process, modeled</tspan><tspan x="328" y="142">the data, wrote an OCR intake</tspan><tspan x="328" y="162">script and put every next step</tspan><tspan x="328" y="182">one click away on the row.</tspan></text>
 
     <line x1="606" y1="82" x2="606" y2="190" stroke="#e3ecea"/>
     <text x="628" y="96" font-size="11" font-weight="700" letter-spacing="2" fill="#0f7b6c">OUTCOME</text>
-    <text font-size="14" fill="#33393f"><tspan x="628" y="122">One click turns a scan into</tspan><tspan x="628" y="142">tracked cases. Thursday's report</tspan><tspan x="628" y="162">is drafted and waiting for a</tspan><tspan x="628" y="182">quick check.</tspan></text>
+    <text font-size="14" fill="#33393f"><tspan x="628" y="122">A scan becomes tracked cases.</tspan><tspan x="628" y="142">A live dashboard flags day 10.</tspan><tspan x="628" y="162">Emails and the weekly report</tspan><tspan x="628" y="182">are drafted, then approved.</tspan></text>
 
     <text x="28" y="232" font-size="11" font-weight="700" letter-spacing="2" fill="#59636e">ARCHITECTURE</text>
     <g font-size="13" text-anchor="middle">
       <rect x="28" y="250" width="140" height="40" rx="8" fill="#fff" stroke="#0f3d3e"/><text x="98" y="275" fill="#0f3d3e">Scanned PDF</text>
       <rect x="200" y="250" width="140" height="40" rx="8" fill="#fff" stroke="#0f3d3e"/><text x="270" y="275" fill="#0f3d3e">Python + OCR</text>
-      <rect x="372" y="250" width="140" height="40" rx="8" fill="#fff" stroke="#0f3d3e"/><text x="442" y="275" fill="#0f3d3e">JSON record</text>
+      <rect x="372" y="250" width="140" height="40" rx="8" fill="#fff" stroke="#0f3d3e"/><text x="442" y="275" fill="#0f3d3e">Microsoft List</text>
       <rect x="544" y="250" width="140" height="40" rx="8" fill="#fff" stroke="#0f3d3e"/><text x="614" y="275" fill="#0f3d3e">Power Automate</text>
-      <rect x="716" y="250" width="156" height="40" rx="8" fill="#0f3d3e"/><text x="794" y="275" fill="#ffffff" font-weight="600">Tracker + report</text>
+      <rect x="716" y="250" width="156" height="40" rx="8" fill="#0f3d3e"/>
+      <rect class="glow" x="716" y="250" width="156" height="40" rx="8" fill="#5eead4" fill-opacity="0"/>
+      <text x="794" y="275" fill="#ffffff" font-weight="600">Dashboard + report</text>
     </g>
-    <g stroke="#0f7b6c" stroke-width="1.6"><line x1="170" y1="270" x2="196" y2="270" marker-end="url(#ar)"/><line x1="342" y1="270" x2="368" y2="270" marker-end="url(#ar)"/><line x1="514" y1="270" x2="540" y2="270" marker-end="url(#ar)"/><line x1="686" y1="270" x2="712" y2="270" marker-end="url(#ar)"/></g>
+    <g stroke="#0f7b6c" stroke-width="1.6"><line class="wire" x1="170" y1="270" x2="196" y2="270" marker-end="url(#ar)"/><line class="wire" x1="342" y1="270" x2="368" y2="270" marker-end="url(#ar)"/><line class="wire" x1="514" y1="270" x2="540" y2="270" marker-end="url(#ar)"/><line class="wire" x1="686" y1="270" x2="712" y2="270" marker-end="url(#ar)"/></g>
+    <g class="pkt"><circle cx="98" cy="244" r="4" fill="#14b8a6"/></g>
   </g>
 </svg>
