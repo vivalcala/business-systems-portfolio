@@ -24,6 +24,8 @@ Pain points:
 
 An Excel tracker migrated to a **Microsoft List**, a **Python intake script** that splits and reads incoming forms, and **Power Automate** flows that create cases and draft the recurring communications for the coordinator to approve.
 
+<p align="center"><img src="../assets/case-flow.svg" alt="Animated: one case moves from Awaiting Transport to Released, one click at a time (fictional data)" width="100%"></p>
+
 ### Process
 
 ```mermaid
@@ -71,7 +73,13 @@ Pages the script cannot read go to a review folder, so a bad scan never creates 
 
 ### Dashboard: every action on the row
 
+<p align="center"><img src="../assets/case-demo.gif" alt="Demo: marking a case embalmed, sending the pickup notice, editing dates, dragging a card on the Board and browsing by semester (fictional data)" width="100%"></p>
+
+<details><summary>Static screenshot</summary>
+
 <p align="center"><img src="../assets/case-dashboard.png" alt="Dashboard with cases grouped by status, days on site and row actions (fictional data)" width="100%"></p>
+
+</details>
 
 The default view groups cases by status, shows days on site (red from day 10) and puts the next action on each row. Columns and buttons sit in fixed slots, so they line up even when a row hides a button.
 
