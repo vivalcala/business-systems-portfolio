@@ -56,19 +56,52 @@ Pages the script cannot read go to a review folder, so a bad scan never creates 
 
 | Field Name | Data Type | Source/Trigger | Automation Action |
 |---|---|---|---|
-| Case ID (agency) | Single line text | Agency email | Key for matching documents |
+| Case ID (agency) | Single line text | Release PDF | Key for matching documents |
 | Internal Tag | Single line text | Assigned on arrival | Shown on all internal forms |
 | Name (First Last) | Single line text | Release PDF | Formatted First Last in every output |
-| Source | Choice | Release PDF | Grouping in reports |
-| Date Received | Date | Driver / coordinator | Starts the 2-week clock |
-| Days On Site | Calculated | Date Received | Flags cases near the limit |
-| Status | Choice: Requested / Received / Complete / Released | Faculty / coordinator | Drives the weekly report |
-| Date Released | Date | Coordinator | Closes the case |
-| Release Letter | Hyperlink | Upload | Attached to the weekly report |
+| Source | Choice (fill-in) | Release PDF | Facility name only; phone numbers stripped, location kept |
+| Date Received | Date | Dashboard / Board | Starts the 2-week clock |
+| Embalmed | Yes/No | "Mark embalmed" button | Moves the case to Ready for Pickup |
+| Date Released | Date | Dashboard / Board | Closes the case |
+| Hold | Choice | Issue flow | Blocks transport requests |
+| Status | Calculated: Hold → Released → Received → Embalmed | Dates above | Single source of truth for every view and flow |
+| Stage | Choice | Board drag / sync flow | Board columns |
+| Semester, Month | Calculated | Date Received | Grouping for term reports |
+| Notes | Multi-line text | Coordinator / Issue flow | Shown on the row; included in driver and weekly emails |
+
+### Dashboard: every action on the row
+
+<p align="center"><img src="../assets/case-dashboard.png" alt="Dashboard with cases grouped by status, days on site and row actions (fictional data)" width="100%"></p>
+
+The default view groups cases by status, shows days on site (red from day 10) and puts the next action on each row. Columns and buttons sit in fixed slots, so they line up even when a row hides a button.
+
+| Status | Row action | What happens |
+|---|---|---|
+| Awaiting Transport | Request transport → Send to driver | One email to the driver with every marked case and its release form |
+| Awaiting Embalming | Mark embalmed | Status moves to Ready for Pickup |
+| Ready for Pickup | Add to pickup → Send to driver | Pickup notice with notes and the partner's release letter |
+| On Hold | Resolve | Opens the case to clear the hold |
+
+Fixed icons on every row:
+
+- **Email** opens a draft to the source facility, with the case already filled in.
+- **Call** shows the facility's number.
+- **Dates** and **Note** open the case form; status recalculates from the dates.
+- **Report issue** asks for the issue type and details, adds a dated note, puts the case on hold, and sends an approval before the agency is notified.
+
+**Ask partner** in the "Ready for Pickup" header opens a draft asking the release partner for space for *N* cases. The count is filled in automatically.
+
+### Other views
+
+| View | Purpose |
+|---|---|
+| Board | Drag a case between stages. A flow keeps dates and stage in sync both ways, using a hidden "last synced stage" field so it never loops |
+| By Semester | Cases grouped by term (Fall Aug–Dec, Spring Jan–Apr, Summer May–Jul) and month, with counts |
+| All Cases | The full record: ten columns, no buttons, status shown as a colored dot |
 
 ### Business rules built in
 
-- **2-week limit:** cases near 14 days on site are flagged. If a closure would push a case past the limit, it is released regardless of status.
+- **2-week limit:** days on site turn red at day 10. If a closure would push a case past the limit, it is released regardless of status.
 - **Selected, not automatic:** pickup notices go only for cases the coordinator selects.
 - **One letter per pickup:** a single release letter can cover several cases.
 - **Weekly report:** drafted every Thursday around 2 PM for the Thursday-to-Thursday window, with that week's release letters, then reviewed before sending.
@@ -77,12 +110,13 @@ Pages the script cannot read go to a review folder, so a bad scan never creates 
 
 *To be added with real, approved numbers (for example: minutes per weekly report before and after, paper forms retired).*
 
-## What I would do next
+## Design decisions
 
-1. A simple entry point (a Form or a mobile List view) so faculty and drivers record status directly instead of on paper.
-2. A visual dashboard of cases by status and days on site.
-3. An alert when a case reaches 10 days on site.
+- **Status is calculated, never typed.** Every view and flow reads the same formula, so they can't disagree.
+- **Contact without new systems.** The facility email and phone lookup lives in the view formatting, and drafts open in the coordinator's own mail client. Nothing new to maintain.
+- **Actions in one place.** The Dashboard is for work; the full-record view stays clean and read-only.
+- **Folder IDs, not paths.** Flows trigger on folder IDs, and the intake script finds its output folder by name, so reorganizing folders doesn't break intake.
 
 ## Skills shown
 
-Process mapping · Business rules analysis · Python (PDF parsing, OCR) · Microsoft Lists · Power Automate · Human-in-the-loop automation · Stakeholder-friendly design
+Process mapping · Business rules analysis · Python (PDF parsing, OCR) · Microsoft Lists · JSON view formatting · SharePoint REST · Power Automate · Human-in-the-loop automation · Stakeholder-friendly design
