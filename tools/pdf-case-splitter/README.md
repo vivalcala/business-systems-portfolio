@@ -29,7 +29,7 @@ flowchart LR
 - **OCR only when needed:** pages with a text layer are read directly; the OCR engine loads only for scanned pages.
 - **Never guess:** a page without a readable case ID and name goes to `NEEDS_REVIEW` instead of creating a wrong record.
 - **Data before trigger:** the JSON is written before the PDF, because the flow fires on the PDF and must find the data ready.
-- **Clean names:** `DOE, JANE A` becomes `Jane A Doe`; IDs are normalized (`P2026-101` → `P2026-00101`); OCR-glued facility names are matched against `facilities.txt`.
+- **Clean names:** `DOE, JANE A` becomes `Jane A Doe`; IDs are normalized (`P2026-101` → `P2026-00101`); OCR-glued facility names are matched against `facilities.txt`; phone numbers next to a facility name are removed (or mapped to that location, e.g. `Sunrise FH (555-010-4310)` → `Sunrise Funeral Home – Midtown`), and other spellings map to the tracker name.
 - **One-click use:** two `.bat` files so a non-technical user can install once and run with a double-click.
 
 ## Example (fictional)

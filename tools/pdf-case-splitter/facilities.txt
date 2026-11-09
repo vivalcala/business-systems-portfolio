@@ -4,3 +4,7 @@ Bayview Medical Center
 Coastal Memorial Hospital
 Sunrise Funeral Home
 Harbor Cremation Services
+
+# Other spellings and location phones -> tracker name (fictional examples)
+Sunrise FH = Sunrise Funeral Home
+555-010-4310 = Sunrise Funeral Home – Midtown

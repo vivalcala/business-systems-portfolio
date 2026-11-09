@@ -53,13 +53,25 @@ CASE_ID_RE = r"([PA]\d{4}-\d{3,5})"
 
 
 def load_facilities():
+    """facilities.txt: one name per line, or 'other spelling = Tracker Name'.
+    The left side can also be a phone number, to map a location's phone to its name."""
+    names, aliases = [], {}
     if not os.path.isfile(FACILITIES_FILE):
-        return []
+        return names, aliases
     with open(FACILITIES_FILE, encoding="utf-8") as fh:
-        return [line.strip() for line in fh if line.strip() and not line.startswith("#")]
-
-
-KNOWN_FACILITIES = load_facilities()
+        for line in fh:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if "=" in line:
+                left, right = (part.strip() for part in line.split("=", 1))
+                digits = re.sub(r"\D", "", left)
+                key = digits if len(digits) == 10 else squash(left)
+                aliases[key] = right
+                names.append(right)
+            else:
+                names.append(line)
+    return names, aliases
 
 # ---------------------------------------------------------------- reading
 _ocr_engine = None
@@ -94,13 +106,32 @@ def squash(s):
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
 
+KNOWN_FACILITIES, FACILITY_ALIASES = load_facilities()
+PHONE_RE = r"\(?\b\d{3}\)?[\s.\-]*\d{3}[\s.\-]*\d{4}\b\)?"
+
+
 def fix_facility(raw):
+    """Return the facility name only: no phone numbers, consistent spelling."""
     raw = raw.strip()
+    # 1. a phone number next to the name -> known location, otherwise drop it
+    phone = re.search(PHONE_RE, raw)
+    if phone:
+        digits = re.sub(r"\D", "", phone.group(0))
+        if digits in FACILITY_ALIASES:
+            return FACILITY_ALIASES[digits]
+        raw = re.sub(PHONE_RE, "", raw)
+    raw = re.sub(r"\(\s*\)", "", raw).strip(" -\u2013,;()")
+    # 2. known names and other spellings
     for name in KNOWN_FACILITIES:
         if squash(name) == squash(raw):
             return name
-    # unknown facility: put spaces back between words that OCR glued together
-    return re.sub(r"(?<=[a-z])(?=[A-Z])", " ", raw)
+    if squash(raw) in FACILITY_ALIASES:
+        return FACILITY_ALIASES[squash(raw)]
+    # 3. unknown: put spaces back between words that OCR glued together,
+    #    and write a location suffix the same way ("Name -North" -> "Name \u2013 North")
+    raw = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", raw)
+    raw = re.sub(r"\s*[-\u2013]\s*(?=[A-Za-z])", " \u2013 ", raw, count=1)
+    return re.sub(r"\s{2,}", " ", raw).strip()
 
 
 def split_given_names(given):
